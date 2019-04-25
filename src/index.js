@@ -6,8 +6,10 @@ import App from './components/App';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
+import reducers from './reducers';
+
 const store = createStore(
-	{}, // Reducers
+	reducers, // Reducers
 	{}, // Estado inicial
 );
 
