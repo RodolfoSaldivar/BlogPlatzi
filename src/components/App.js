@@ -31,15 +31,17 @@ const App = () => {
 		<div className="margen">
 			<table className="tabla">
 				<thead>
-					<th>
-						Nombre
-					</th>
-					<th>
-						Correo
-					</th>
-					<th>
-						Enlace
-					</th>
+					<tr>
+						<th>
+							Nombre
+						</th>
+						<th>
+							Correo
+						</th>
+						<th>
+							Enlace
+						</th>
+					</tr>
 				</thead>
 				<tbody>
 					{ ponerFilas() }
