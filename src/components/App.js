@@ -4,24 +4,30 @@ class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			usuarios: [
-				{
-					nombre: 'Rodolfo',
-					correo: 'rodolfo@platzi.com',
-					enlace: 'rodolfo.com'
-				},
-				{
-					nombre: 'Rodolfito',
-					correo: 'rodolfo@platzi.com',
-					enlace: ''
-				},
-				{
-					nombre: 'Platzi',
-					correo: 'info@platzi.com',
-					enlace: 'platzi.com'
-				}
-			]
+			usuarios: []
 		}
+	}
+
+	componentDidMount() {
+		const usuarios = [
+			{
+				nombre: 'Rodolfo',
+				correo: 'rodolfo@platzi.com',
+				enlace: 'rodolfo.com'
+			},
+			{
+				nombre: 'Rodolfito',
+				correo: 'rodolfo@platzi.com',
+				enlace: ''
+			},
+			{
+				nombre: 'Platzi',
+				correo: 'info@platzi.com',
+				enlace: 'platzi.com'
+			}
+		];
+
+		this.setState({ usuarios });
 	}
 
 	ponerFilas = () => this.state.usuarios.map((usuario) => (
