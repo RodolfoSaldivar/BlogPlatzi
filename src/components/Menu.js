@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Menu = (props) => (
 	<nav id='menu'>
-		<a href='/'>
+		<Link to='/'>
 			Usuarios
-		</a>
-		<a href='/tareas'>
+		</Link>
+		<Link to='/tareas'>
 			Tareas
-		</a>
+		</Link>
 	</nav>
 );
 
