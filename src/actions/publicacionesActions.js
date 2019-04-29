@@ -6,7 +6,7 @@ import {
 } from '../types/publicacionesTypes';
 
 export const traerPorUsuario = (key) => async (dispatch, getState) => {
-	const { usuarios } = getState().usuariosReducer;
+	let { usuarios } = getState().usuariosReducer;
 	const { publicaciones } = getState().publicacionesReducer;
 	const usuario_id = usuarios[key].id;
 
@@ -15,6 +15,9 @@ export const traerPorUsuario = (key) => async (dispatch, getState) => {
 		...publicaciones,
 		respuesta.data
 	];
+	const publicaciones_key = publicaciones_actualizadas.length - 1;
+	usuarios[key]['publicaciones_key'] = publicaciones_key;
+
 
 	dispatch({
 		type: TRAER_POR_USUARIO,
