@@ -13,11 +13,11 @@ class Publicaciones extends Component {
 		if (!this.props.usuariosReducer.usuarios.length) {
 			await this.props.usuariosTraerTodos();
 		}
-		this.props.publicacionesTraerPorUsuario(this.props.match.params.key);
+		await this.props.publicacionesTraerPorUsuario(this.props.match.params.key);
+		console.log(this.props.publicacionesReducer.publicaciones);
 	}
 
 	render() {
-		console.log(this.props);
 		return (
 			<div>
 				<h1>

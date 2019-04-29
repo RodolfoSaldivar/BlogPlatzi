@@ -8,8 +8,10 @@ import * as usuariosActions from '../../actions/usuariosActions';
 
 class Usuarios extends Component {
 
-	async componentDidMount() {
-		this.props.traerTodos();
+	componentDidMount() {
+		if (!this.props.usuarios.length) {
+			this.props.traerTodos();
+		}
 	}
 
 	ponerContenido = () => {
