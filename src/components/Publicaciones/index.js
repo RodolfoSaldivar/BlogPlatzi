@@ -29,7 +29,7 @@ class Publicaciones extends Component {
 		}
 	}
 
-	ponerNombre = () => {
+	ponerUsuario = () => {
 		const {
 			match: { params: { key } },
 			usuariosReducer
@@ -54,7 +54,7 @@ class Publicaciones extends Component {
 	render() {
 		return (
 			<div>
-				{ this.ponerNombre() }
+				{ this.ponerUsuario() }
 				{ this.props.match.params.key }
 			</div>
 		);
