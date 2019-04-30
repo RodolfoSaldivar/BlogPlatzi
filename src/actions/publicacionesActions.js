@@ -4,6 +4,9 @@ import {
 	ERROR,
 	TRAER_POR_USUARIO
 } from '../types/publicacionesTypes';
+import * as usuariosTypes from '../types/usuariosTypes';
+
+const { TRAER_TODOS: USUARIOS_TRAER_TODOS } = usuariosTypes;
 
 export const traerPorUsuario = (key) => async (dispatch, getState) => {
 	let { usuarios } = getState().usuariosReducer;
@@ -16,8 +19,16 @@ export const traerPorUsuario = (key) => async (dispatch, getState) => {
 		respuesta.data
 	];
 	const publicaciones_key = publicaciones_actualizadas.length - 1;
-	usuarios[key]['publicaciones_key'] = publicaciones_key;
+	const usuarios_actualizados = [...usuarios];
+	usuarios_actualizados[key] = {
+		...usuarios[key],
+		publicaciones_key
+	}
 
+	dispatch({
+		type: USUARIOS_TRAER_TODOS,
+		payload: usuarios_actualizados
+	});
 
 	dispatch({
 		type: TRAER_POR_USUARIO,
