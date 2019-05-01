@@ -73,6 +73,6 @@ export const abrirCerrar = (pub_key, com_key) => (dispatch, getState) => {
 	
 	dispatch({
 		type: ACTUALIZAR,
-		payload: publicaciones
+		payload: publicaciones_actualizadas
 	})
 };
