@@ -1,7 +1,7 @@
 import {
 	CARGANDO,
 	ERROR,
-	TRAER_POR_USUARIO
+	ACTUALIZAR
 } from '../types/publicacionesTypes';
 
 const INITIAL_STATE = {
@@ -12,7 +12,7 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
 	switch (action.type) {
-		case TRAER_POR_USUARIO:
+		case ACTUALIZAR:
 			return {
 				...state,
 				publicaciones: action.payload,
