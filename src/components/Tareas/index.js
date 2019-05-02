@@ -7,9 +7,9 @@ class Tareas extends Component {
 	componentDidMount() {
 		this.props.traerTodas();
 	}
-	
+
 	render() {
-		console.log(this.props);
+		console.log(this.props.tareas);
 		return (
 			<div>
 				Tareas
