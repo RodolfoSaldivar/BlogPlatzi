@@ -28,7 +28,7 @@ export const traerTodas = () => async (dispatch) => {
 		console.log(error.message);
 		dispatch({
 			type: ERROR,
-			payload: 'Información de usuario no disponible.'
+			payload: 'Tareas no disponibles.'
 		})
 	}
 };
