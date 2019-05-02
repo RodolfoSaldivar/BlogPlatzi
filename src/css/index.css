@@ -39,3 +39,7 @@ body {
 .pub_titulo {
 	border-top: 1px solid black;
 }
+
+li {
+	margin: 15px 0 15px 0;
+}

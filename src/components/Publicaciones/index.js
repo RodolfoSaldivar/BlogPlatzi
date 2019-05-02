@@ -98,17 +98,22 @@ class Publicaciones extends Component {
 				<h3>
 					{ publicacion.body }
 				</h3>
-				{ (publicacion.abierto) ? <Comentarios /> : '' }
+				{
+					(publicacion.abierto) ?
+						<Comentarios
+							comentarios={ publicacion.comentarios }
+						/>
+						: ''
+				}
 			</div>
 		))
 	);
 
 	mostrarComentarios = async (pub_key, com_key, comentarios) => {
-		console.log('comentarios: ', comentarios);
-		this.props.abrirCerrar(pub_key, com_key)
 		if (!comentarios.length) {
 			await this.props.traerComentarios(pub_key, com_key)
 		}
+		this.props.abrirCerrar(pub_key, com_key)
 	};
 
 	render() {
