@@ -1,8 +1,6 @@
 import React from 'react';
 
 const Comentarios = (props) => {
-	if (!props.abierto) return '';
-
 	return (
 		<ul>
 			<li>
