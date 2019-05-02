@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Spinner from '../General/Spinner';
+import Fatal from '../General/Fatal';
 
 import * as tareasActions from '../../actions/tareasActions';
 
@@ -10,7 +12,14 @@ class Tareas extends Component {
 	}
 
 	mostrarContenido = () => {
-		const { tareas } = this.props;
+		const { tareas, cargando, error } = this.props;
+
+		if (cargando) {
+			return <Spinner />
+		}
+		if (error) {
+			return <Fatal mensaje={ error } />
+		}
 
 		return Object.keys(tareas).map((usu_id) => (
 			<div key={ usu_id }>
