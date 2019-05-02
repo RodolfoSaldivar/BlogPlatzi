@@ -109,11 +109,11 @@ class Publicaciones extends Component {
 		))
 	);
 
-	mostrarComentarios = async (pub_key, com_key, comentarios) => {
-		if (!comentarios.length) {
-			await this.props.traerComentarios(pub_key, com_key)
-		}
+	mostrarComentarios = (pub_key, com_key, comentarios) => {
 		this.props.abrirCerrar(pub_key, com_key)
+		if (!comentarios.length) {
+			this.props.traerComentarios(pub_key, com_key)
+		}
 	};
 
 	render() {
