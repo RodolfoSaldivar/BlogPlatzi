@@ -12,6 +12,25 @@ class Guardar extends Component {
 		this.props.cambioTitulo(event.target.value);
 	};
 
+	guardar = () => {
+		const { usuario_id, titulo, agregar } = this.props;
+		const nueva_tarea = {
+			userId: usuario_id,
+			title: titulo,
+			completed: false
+		};
+		agregar(nueva_tarea);
+	};
+
+	deshabilitar = () => {
+		const { usuario_id, titulo } = this.props;
+
+		if (!usuario_id || !titulo)
+			return true;
+
+		return false;
+	};
+
 	render() {
 		return (
 			<div>
@@ -29,7 +48,10 @@ class Guardar extends Component {
 					onChange={ this.cambioTitulo }
 				/>
 				<br /><br />
-				<button>
+				<button
+					disabled={ this.deshabilitar() }
+					onClick={ this.guardar }
+				>
 					Guardar
 				</button>
 			</div>
