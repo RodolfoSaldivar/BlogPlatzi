@@ -93,13 +93,13 @@ class Guardar extends Component {
 				Usuario id:
 				<input
 					type='number'
-					defaultValue={ this.props.usuario_id }
+					value={ this.props.usuario_id }
 					onChange={ this.cambioUsuarioId }
 				/>
 				<br /><br />
 				Título:
 				<input
-					defaultValue={ this.props.titulo }
+					value={ this.props.titulo }
 					onChange={ this.cambioTitulo }
 				/>
 				<br /><br />
