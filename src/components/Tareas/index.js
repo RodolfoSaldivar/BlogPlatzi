@@ -13,8 +13,11 @@ class Tareas extends Component {
 	}
 
 	componentDidUpdate() {
-		if (!Object.keys(this.props.tareas).length)
-			this.props.traerTodas();
+		const { tareas, cargando, traerTodas } = this.props;
+
+		if (!Object.keys(tareas).length && !cargando) {
+			traerTodas();
+		}
 	}
 
 	mostrarContenido = () => {
