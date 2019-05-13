@@ -1,0 +1,56 @@
+#margen {
+	margin: 100px;
+	margin-top: 50px;
+}
+
+.tabla {
+	width: 100%;
+	text-align: left;
+}
+
+.tabla td {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#menu {
+	background-color: #253A46;
+	padding: 20px;
+	font-size: 20px;
+}
+
+#menu a {
+	color: white;
+	padding-right: 50px;
+}
+
+body {
+	margin: 0;
+}
+
+.center {
+	text-align: center;
+}
+
+.rojo {
+	color: red;
+}
+
+.pub_titulo {
+	border-top: 1px solid black;
+	cursor: pointer;
+}
+
+li {
+	margin: 15px 0 15px 0;
+}
+
+.contenedor_tareas {
+	font-size: 20px;
+	margin-left: 50px;
+	margin-bottom: 70px
+}
+
+.m_left {
+	margin-left: 20px;
+}
