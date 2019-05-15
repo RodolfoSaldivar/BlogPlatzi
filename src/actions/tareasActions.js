@@ -9,19 +9,19 @@ export const traerTodas = () => async (dispatch) => {
 	try {
 		const respuesta = await axios.get('https://jsonplaceholder.typicode.com/todos');
 		
-		const comentarios = {};
-		respuesta.data.map((com) => (
-			comentarios[com.userId] = {
-				...comentarios[com.userId],
-				[com.id]: {
-					...com
+		const tareas = {};
+		respuesta.data.map((tarea) => (
+			tareas[tarea.userId] = {
+				...tareas[tarea.userId],
+				[tarea.id]: {
+					...tarea
 				}
 			}
 		));
 
 		dispatch({
 			type: TRAER_TODAS,
-			payload: comentarios
+			payload: tareas
 		})
 	}
 	catch (error) {
