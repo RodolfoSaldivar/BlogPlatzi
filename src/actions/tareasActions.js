@@ -10,11 +10,11 @@ export const traerTodas = () => async (dispatch) => {
 		const respuesta = await axios.get('https://jsonplaceholder.typicode.com/todos');
 		
 		const tareas = {};
-		respuesta.data.map((tarea) => (
-			tareas[tarea.userId] = {
-				...tareas[tarea.userId],
-				[tarea.id]: {
-					...tarea
+		respuesta.data.map((tar) => (
+			tareas[tar.userId] = {
+				...tareas[tar.userId],
+				[tar.id]: {
+					...tar
 				}
 			}
 		));
